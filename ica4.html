@@ -3,15 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <title>Document</title>
         <style>
-        @font-face {
-            font-family: font_logo;
-            src: url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap')
+        
+        .raleway-headerFont {
+        font-family: "Raleway", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 100;
+        font-style: normal;
+        }
+        
+        .quicksand-bodyFont {
+        font-family: "Quicksand", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: <weight>;
+        font-style: normal;
         }
         .color-box {
             height: 100px;
             width: 100px;
+        }
+        h1 {
+            font-size: 39.0625px;
+            font-family: Raleway;
+        }
+        h2 {
+            font-size: 31.25px;
+            font-family: Raleway;
+        }
+        h3 {
+            font-size: 25px;
+            font-family: Raleway;
+        }
+        p {
+            font-size: 20px;
+            font-family: Quicksand;
+        }
+        small {
+            font-size: 16px;
+            font-family: Quicksand;
+        }
+        button {
+            font-size: 20px;
+            font-family: Raleway;
+        }
+        a:link {
+            color: #DE3C4B;
+        }
+        a:visited {
+            color:#A288E3
+        }
+        a:hover {
+            color:#EC9A29
         }
         #box1 {
             background-color: #EC9A29;
@@ -34,19 +80,22 @@
         </style>
 </head>
 <body>
-    <div class="color-box" id="box1">EC9A29</div>
-    <div class="color-box" id="box2">A288E3</div>
-    <div class="color-box" id="box3">2D4654</div>
-    <div class="color-box" id="box4">F4F4F6</div>
-    <div class="color-box" id="box5">DE3C4B</div>
+    <div class="color-box" id="box1"><p>EC9A29</p></div>
+    <div class="color-box" id="box2"><p>A288E3</p></div>
+    <div class="color-box" id="box3"><p>2D4654</p></div>
+    <div class="color-box" id="box4"><p>F4F4F6</p></div>
+    <div class="color-box" id="box5"><p>DE3C4B</p></div>
 
-    <h1><font-family:font_logo>this is a heading</font-family:font_logo></h1>
+    <h1>this is a heading</h1>
     <h2>this is a heading</h2>
     <h3>this is a heading</h3>
 
     <p>this is paragraph text</p>
 
-    <a href="">this is a link</a>
+    <p><a href="">this is a link</a></p>
+
+    <small>this is small text</small>
     
+    <button>this is a button</button>
 </body>
 </html>
