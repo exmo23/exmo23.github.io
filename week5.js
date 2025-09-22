@@ -3,12 +3,15 @@ const navMenu = document.querySelector('.nav-menu');
 
 var menu_shown = false;
 
-function showMenu() {
-    var shown = navMenu.classList.toggle("show");
-    navMenu.classList.toggle("hide");
-
-    if (shown) {
-        navToggle.setAttribute()
+function func() {
+    if (navMenu.classList.contains("show")) {
+        navMenu.classList.remove("show")
+        navMenu.classList.add("hide")
+    }
+    else if (navMenu.classList.contains("hide")) {
+        navMenu.classList.remove("hide")
+        navMenu.classList.add("show")
     }
 }
-navToggle.addEventListener("click",)
+
+navMenu.addEventListener("")

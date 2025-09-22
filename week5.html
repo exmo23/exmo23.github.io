@@ -6,19 +6,23 @@
     <title>Document</title>
     <link rel="stylesheet" href="week5stylesheet.css">
     <script src="week5.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
     <nav class="main-nav">
       <div class="nav-brand">Community Hub</div>
-      <button class="nav-toggle" aria-label="Toggle navigation menu">
+      <button class="nav-toggle" aria-label="Toggle navigation menu" onclick="func()">
         <span class="hamburger"></span>
         <span class="hamburger"></span>
         <span class="hamburger"></span>
       </button>
-      <ul class="nav-menu.show">
+      <ul class="nav-menu hide">
         <li><a href="#home">Home</a></li>
-        <li><a href="#resources">Resources</a></li>
-        <li><a href="#events">Events</a></li>
+        <li><a href="#resources">Parkour Groups</a></li>
+        <li><a href="#events">Competitions & Events</a></li>
+        <li><a href="#forum">Message Board</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
       <script>
