@@ -1,0 +1,76 @@
+.raleway-headerFont {
+        font-family: "Raleway", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 100;
+        font-style: normal;
+        }
+        
+.quicksand-bodyFont {
+        font-family: "Quicksand", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 100;
+        font-style: normal;
+        }
+
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    background-color:purple;
+}
+.nav-brand {
+    font-size: 48px;
+    font-family: Raleway;
+    padding: 16px;
+    color: aqua;
+}
+.nav-menu {
+    display: flex;
+    gap: 16px;
+    padding: 16px;
+}
+.nav-toggle {
+    display: none;
+}
+ul {
+    list-style-type: none;
+}
+a {
+    color: aqua;
+    font-family: Raleway;
+    font-size: 16px;
+}
+@media screen and (max-width: 768px) {
+    .nav-toggle {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        align-self: center;
+        flex-direction: column;
+    }
+    .nav-toggle:hover {
+        background-color: blue;
+    }
+    .nav-toggle:focus {
+        background-color: blue;
+    }
+    .nav-menu {
+    display: flex;
+    gap: 16px;
+    padding: 16px;
+    }
+    .hamburger {
+    background-color: black;
+    height: 6px;
+    width: 40px;
+    padding: 0;
+    margin: 3px;
+    }
+    .nav-menu.hide {
+    display: none;
+    }
+    .nav-menu.show {
+        position: absolute;
+        display: flex;
+        gap: 16px;
+    }
+}
