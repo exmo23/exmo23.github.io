@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="week6stylesheet.css">
-    <script src="week5.js" defer></script>
+    <script src="week6.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -29,8 +29,28 @@
         </nav>
         <br>
     <sidebar class="sidebar">
-      <h1>Example Link</h1>
+      <button class="FilterByTop" onclick="sortByTop()">Most Popular</button><br>
+      <button class="FilterByNew">New Listings</button><br>
+      <button class="AddNewListing">Post Your Event</button><br>
     </sidebar>
+    <content class="content">
+      <div class="Listing1 show">
+        <h1>Boulder Area Meetup</h1>
+        <p>Recommendations: 15</p>
+      </div>
+      <div class="Listing2 show">
+        <h1>Boulder Area Meetup</h1>
+        <p>Recommendations: 56</p>
+      </div>
+      <div class="Listing3 show">
+        <h1>Boulder Area Meetup</h1>
+        <p>Recommendations: 128</p>
+      </div>
+      <div class="Listing4 show">
+        <h1>Boulder Area Meetup</h1>
+        <p>Recommendations: 35</p>
+      </div>
+    </content>
   </div>
 </nav>
 </body>

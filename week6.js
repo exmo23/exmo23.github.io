@@ -13,5 +13,19 @@ function func() {
         navMenu.classList.add("show")
     }
 }
+const filtertop = document.querySelector('FilterByTop');
+const topListing = document.querySelector('Listing3');
 
-navMenu.addEventListener("")
+function sortByTop() {
+    if (topListing.classList.contains("show")) {
+        topListing.classList.remove("show")
+        topListing.classList.add("hide")
+    }
+    else if (topListing.classList.contains("hide")) {
+        topListing.classList.remove("hide")
+        topListing.classList.add("show")
+    }
+}
+
+navMenu.addEventListener("");
+filtertop.addEventListener("");
