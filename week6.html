@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class='light'>
     <div class="main-grid">
       <nav class="main-nav">
         <div class="nav-brand">Community Hub</div>
@@ -32,6 +32,8 @@
       <button class="FilterByTop" onclick="sortByTop()">Most Popular</button><br>
       <button class="FilterByNew">New Listings</button><br>
       <button class="AddNewListing">Post Your Event</button><br>
+      <button class='darkThemeButton' onclick="setTheme('dark')">Dark Theme</button>
+      <button class='lightThemeButton' onclick="setTheme('light')">Light Theme</button>
     </sidebar>
     <content class="content">
       <div class="Listing1 show">

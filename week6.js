@@ -15,6 +15,8 @@ function func() {
 }
 const filtertop = document.querySelector('FilterByTop');
 const topListing = document.querySelector('Listing3');
+const darkThemeBtn = document.querySelector("darkThemeButton");
+const lightThemeBtn = document.querySelector("lightThemeButton");
 
 function sortByTop() {
     if (topListing.classList.contains("show")) {
@@ -26,6 +28,21 @@ function sortByTop() {
         topListing.classList.add("show")
     }
 }
+
+// Save user's theme choice
+function setTheme(theme) {
+    localStorage.setItem('userTheme', theme);
+    document.body.className = theme;
+}
+
+// Load saved theme on page load
+window.addEventListener('load', function() {
+    const savedTheme = localStorage.getItem('userTheme') || 'light';
+    document.body.className = savedTheme;
+});
+
+darkThemeBtn.addEventListener('click', setTheme('dark'));
+lightThemeBtn.addEventListener('click', setTheme('light'));
 
 navMenu.addEventListener("");
 filtertop.addEventListener("");
