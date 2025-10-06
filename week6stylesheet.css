@@ -107,6 +107,9 @@ a {
 .Listing3.show {
         display: block;
     }
+    .menuButtons {
+        display: block;
+    }
 @media screen and (max-width: 768px) {
     .nav-toggle {
         display: flex;
@@ -123,8 +126,12 @@ a {
     }
     .nav-menu {
     display: flex;
+    flex-direction:column;
+    position:relative;
     gap: 16px;
     padding: 16px;
+    background-color:#A288E3;
+    z-index: 1;
     }
     .hamburger {
     background-color: black;
@@ -140,5 +147,13 @@ a {
         position: absolute;
         display: flex;
         gap: 16px;
+    }
+    .menuButtons.hide {
+        display: none;
+    }
+    .menuButtons.show {
+        display: flex;
+        position: relative;
+        z-index: 1;
     }
 }
