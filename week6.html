@@ -30,28 +30,36 @@
         </nav>
         <br>
     <sidebar class="sidebar">
-      <button class="menuButtons FilterByTop" onclick="sortByTop()">Most Popular</button><br>
+      <button class="menuButtons FilterByAge" onclick="sortBy13()">Age 13+</button><br>
+      <button class="menuButtons FilterByAge" onclick="sortBy16()">Age 16+</button><br>
+      <button class="menuButtons FilterByAge" onclick="sortBy18()">Age 18+</button><br>
+      <button class="menuButtons FilterByAge" onclick="sortBy21()">Age 21+</button><br>
+      <button class="menuButtons clearFilters" onclick="clearFilter()">Clear Age Filter</button>
       <button class="menuButtons FilterByNew">New Listings</button><br>
       <button class="menuButtons AddNewListing">Post Your Event</button><br>
       <button class="menuButtons darkThemeButton" onclick="setTheme('dark')">Dark Theme</button>
       <button class="menuButtons lightThemeButton" onclick="setTheme('light')">Light Theme</button>
     </sidebar>
     <content class="content">
-      <div class="Listing1 show">
+      <div class="Listing show age18">
         <h1>Boulder Area Meetup</h1>
         <p>Recommendations: 15</p>
+        <p>Come tear up obstacles around North Boulder with us! Ages 18+</p>
       </div>
-      <div class="Listing2 show">
+      <div class="Listing show age16">
         <h1>Boulder Area Meetup</h1>
         <p>Recommendations: 56</p>
+        <p>Casual meetup for parkour athletes on CU campus!</p>
       </div>
-      <div class="Listing3 show">
+      <div class="Listing show age21">
         <h1>Boulder Area Meetup</h1>
         <p>Recommendations: 128</p>
+        <p>Adult athlete meeting at Valmont Park</p>
       </div>
-      <div class="Listing4 show">
-        <h1>Boulder Area Meetup</h1>
+      <div class="Listing show age13">
+        <h1>Denver Area Meetup</h1>
         <p>Recommendations: 35</p>
+        <p>All ages 13+ meetup at Arvada Shopping Center!</p>
       </div>
     </content>
   </div>
