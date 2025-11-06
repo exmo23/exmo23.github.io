@@ -1,26 +1,23 @@
-const endpoint = "https://newsapi.org/v2/top-headlines?q=keyword&apiKey=ddf87bd817a84bcda9f4647d375619d7";
-const data = await fetch(endpoint);
-if(!data.ok) {
-    throw new Error('Response status: ${response.status}');
-}
+const endpoint = "https://newsapi.org/v2/top-headlines?q=breaking&apiKey=ddf87bd817a84bcda9f4647d375619d7";
 
-const result = await Response.json();
 async function newTrivia() {
     // console.log("Success")
     try {
+        const data = await fetch(endpoint);
+        if(!data.ok) {
+            console.log('AAAAARRGGGGHHHHH AAUUAUUHGHGHGHHAUGUHAGAHUHG')
+            throw Error('Response status: bad');
+        }  
+        const result = JSON.parse(data.responseText)
+        console.log(result.articles[0].title)
         const answerText = document.querySelector
         ('#js-answer-text');
-        const response = await fetch(endpoint);
-        if(!response.ok) {
-            throw Error(response.statusText);
-        }
         answerText.textContent = " ";
-        const json = await response.json();
-        console.log(json);
-        const total = json["total"];
-        const items = json["items"];
+        console.log(result);
+        //const total = json["total"];
+        //const items = json["items"];
         
-        displayItems(items);
+        displayItems(result);
     }
     catch(err) {
         
@@ -38,9 +35,9 @@ function displayItems(news) {
     (".item2");
     const item3 = document.querySelector
     (".item3");
-    item1.textContent = news.articles[0];
-    item2.textContent = news.articles[1];
-    item3.textContent = news.articles[2];
+    item1.textContent = news.articles[0].title;
+    item2.textContent = news.articles[1].title;
+    item3.textContent = news.articles[2].title;
     
 }
 
