@@ -8,16 +8,13 @@ async function newTrivia() {
             console.log('AAAAARRGGGGHHHHH AAUUAUUHGHGHGHHAUGUHAGAHUHG')
             throw Error('Response status: bad');
         }  
-        const result = JSON.parse(data.responseText)
-        console.log(result.articles[0].title)
-        const answerText = document.querySelector
-        ('#js-answer-text');
-        answerText.textContent = " ";
-        console.log(result);
+        //const result = JSON.parse(data.responseText);
+        console.log(data.totalResults);
+        result = await data.json();
         //const total = json["total"];
         //const items = json["items"];
-        
-        displayItems(result);
+        console.log(result)
+        displayItems(result)
     }
     catch(err) {
         
@@ -39,12 +36,6 @@ function displayItems(news) {
     item2.textContent = news.articles[1].title;
     item3.textContent = news.articles[2].title;
     
-}
-
-function displayAnswer(answer) {
-    const answerText = document.querySelector
-    ('#js-answer-text');
-    answerText.textContent = answer;
 }
 
 newTrivia()
