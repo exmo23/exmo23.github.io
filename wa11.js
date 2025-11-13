@@ -22,7 +22,7 @@ async function newTrivia() {
     catch(err) {
         
     }
-}
+} 
 
 function testPrint() {
     console.log('oof ouch owie');
