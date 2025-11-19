@@ -9,8 +9,9 @@
 <body>
     <div class="app">
         <header>Top Stories Today</header>
+        <button id="tracking-toggle" onclick="changeButtons()">Press this button to add localStorage tracking of your searches.</button>
          <input type="text" id="searchInput" name="newsSearch" placeholder="Search.."/>
-         <input type="submit" value="Submit" onclick="searchNews()"/>
+         <input type="submit" id="submitButton" value="Submit" onclick="searchNews()"/>
         <ul class="items">
             <a href="" class="headline item1">Item 1
             </a>

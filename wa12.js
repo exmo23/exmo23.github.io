@@ -42,7 +42,26 @@ async function breakingNews()
 };
 
 breakingNews();
+const button1 = document.getElementById("tracking-toggle");
+button1.setAttribute(onclick, "searchNews()");
 
+function changeButtons() {
+    console.log("entered changebuttons()");
+    const button1 = document.getElementById("tracking-toggle");
+    console.log("button1 success");
+    if( button1.getAttribute(onclick) == "searchNews()") {
+        console.log("opened localstorage");
+        localStorage.setItem("userData", String(""));
+        console.log(localStorage.getItem("userData"));
+        button1.setAttribute(onclick, "trackingNews(userData)");
+    } else {
+        console.log(button1.getAttribute(onclick));
+        button1.setAttribute(onclick, "searchNews()");
+        localStorage.clear();
+        console.log("closed localstorage");
+    }
+    return null;
+};
 
 async function searchNews()
 {
@@ -77,6 +96,46 @@ async function searchNews()
             item6.textContent = parsed.articles[5].title;
         }
     };
+    xhttp.open("GET", searchLink);
+    xhttp.send();
+};
+
+async function trackingNews(userData)
+{
+    var searchText = document.getElementById("searchInput" + userData).value;
+    var searchLink = "https://newsapi.org/v2/everything?q=" + searchText + "&apiKey=ddf87bd817a84bcda9f4647d375619d7";
+    console.log(searchLink);
+    const endpoint = searchLink;
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            const item1 = document.querySelector
+            (".item1");
+            const item2 = document.querySelector
+            (".item2");
+            const item3 = document.querySelector
+            (".item3");
+            const item4 = document.querySelector
+            (".item4");
+            const item5 = document.querySelector
+            (".item5");
+            const item6 = document.querySelector
+            (".item6");
+            console.log(xhttp.responseType)
+            console.log(xhttp)
+            console.log(xhttp.response)
+            parsed = JSON.parse(xhttp.response)
+            item1.textContent = parsed.articles[0].title;
+            item2.textContent = parsed.articles[1].title;
+            item3.textContent = parsed.articles[2].title;
+            item4.textContent = parsed.articles[3].title;
+            item5.textContent = parsed.articles[4].title;
+            item6.textContent = parsed.articles[5].title;
+        }
+    };
+    var str = userData + String(searchText);
+    localStorage.setItem("userData", str);
+    console.log(localStorage.getItem("userData"));
     xhttp.open("GET", searchLink);
     xhttp.send();
 };
