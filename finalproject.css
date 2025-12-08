@@ -1,0 +1,162 @@
+.raleway-headerFont {
+        font-family: "Raleway", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 100;
+        font-style: normal;
+        }
+        
+.quicksand-bodyFont {
+        font-family: "Quicksand", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 100;
+        font-style: normal;
+        }
+
+.sidebar {
+    display: flex;
+    flex-direction:row;
+}
+body.dark {
+    background-color:rgb(43, 43, 43);
+}
+body.light {
+    background-color: #F4F4F6;
+}
+.main-grid {
+    display: grid;
+    flex-direction: column;
+    grid-template:
+    "nav"
+    "sidebar content";
+}
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    background-color:purple;
+}
+.nav-brand {
+    font-size: 48px;
+    font-family: Raleway;
+    padding: 16px;
+    color: aqua;
+}
+.nav-menu {
+    display: flex;
+    gap: 16px;
+    padding: 16px;
+}
+.nav-toggle {
+    display: none;
+}
+.Listing {
+    border:#A288E3;
+    border-width: 4px;
+    border-color:#A288E3;
+    display:block;
+}
+.Listing.hide {
+    display:none;
+}
+.Listing.show {
+    display:block;
+}
+
+h1 {
+            font-size: 39.0625px;
+            font-family: Raleway;
+        }
+        h2 {
+            font-size: 31.25px;
+            font-family: Raleway;
+        }
+        h3 {
+            font-size: 25px;
+            font-family: Raleway;
+        }
+        p {
+            font-size: 20px;
+            font-family: Quicksand;
+            text-indent: 16px;
+        }
+        small {
+            font-size: 16px;
+            font-family: Quicksand;
+        }
+        button {
+            font-size: 20px;
+            font-family: Raleway;
+            color:#F4F4F6;
+            background-color: #DE3C4B;
+            border: #F4F4F6;
+        }
+        button:hover {
+            background-color:#EC9A29;
+        }
+        a {
+            color: #DE3C4B;
+        }
+        a:visited {
+            color:#A288E3;
+        }
+        a:hover {
+            color:#EC9A29;
+        }
+ul {
+    list-style-type: none;
+}
+a {
+    color: aqua;
+    font-family: Raleway;
+    font-size: 16px;
+}
+
+    .menuButtons {
+        display: block;
+    }
+@media screen and (max-width: 768px) {
+    .nav-toggle {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        align-self: center;
+        flex-direction: column;
+    }
+    .nav-toggle:hover {
+        background-color: blue;
+    }
+    .nav-toggle:focus {
+        background-color: blue;
+    }
+    .nav-menu {
+    display: flex;
+    flex-direction:column;
+    position:relative;
+    gap: 16px;
+    padding: 16px;
+    background-color:#A288E3;
+    z-index: 1;
+    }
+    .hamburger {
+    background-color: black;
+    height: 6px;
+    width: 40px;
+    padding: 0;
+    margin: 3px;
+    }
+    .nav-menu.hide {
+    display: none;
+    }
+    .nav-menu.show {
+        position: absolute;
+        display: flex;
+        gap: 16px;
+    }
+    .menuButtons.hide {
+        display: none;
+    }
+    .menuButtons.show {
+        display: flex;
+        position: relative;
+        z-index: 1;
+    }
+}
