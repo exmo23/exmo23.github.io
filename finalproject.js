@@ -145,13 +145,13 @@ const postTitle = document.getElementById('post-title');
 const postContent = document.getElementById('post-content');
 
 if(newPost) {
-    newPost.addEventListener('submit', async (event) => function(){
+    newPost.addEventListener('submit', async (event) => async function(){
         event.preventDefault();
         const title = postTitle.value;
         const content = postContent.value;
         try {
             const postsCol = collection(db, 'posts');
-            const docRef = addDoc(postsCol, {
+            const docRef = await addDoc(postsCol, {
                 title: postTitle.textContent,
                 content: postContent.textContent,
                 timestamp: new Date()
