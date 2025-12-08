@@ -145,15 +145,15 @@ const postTitle = document.getElementById('post-title');
 const postContent = document.getElementById('post-content');
 
 if(newPost) {
-    newPost.addEventListener('submit', async (event) => async function(){
+    newPost.addEventListener('submit', async (event) => {
         event.preventDefault();
-        const title = postTitle.value;
-        const content = postContent.value;
+        const newtitle = postTitle.value;
+        const newcontent = postContent.value;
         try {
             const postsCol = collection(db, 'posts');
             const docRef = await addDoc(postsCol, {
-                title: postTitle.textContent,
-                content: postContent.textContent,
+                title: newtitle,
+                content: newcontent,
                 timestamp: new Date()
             })
             console.log("Successfully saved new entry. ID: ", docRef.id)
