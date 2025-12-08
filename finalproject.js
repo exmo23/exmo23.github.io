@@ -140,15 +140,15 @@ async function getPosts(db) {
     return postList;
 }
 
-const newPost = document.getElementById('new-post');
+const newPost = document.getElementById('new-post-form');
 const postTitle = document.getElementById('post-title');
 const postContent = document.getElementById('post-content');
 
 if(newPost) {
     newPost.addEventListener('submit', async (event) => function(){
         event.preventDefault();
-        const title = postTitle.textContent;
-        const content =postTitle.textContent;
+        const title = postTitle.value;
+        const content = postContent.value;
         try {
             const postsCol = collection(db, 'posts');
             const docRef = addDoc(postsCol, {
