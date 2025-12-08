@@ -152,8 +152,8 @@ if(newPost) {
         try {
             const postsCol = collection(db, 'posts');
             const docRef = addDoc(postsCol, {
-                title: title,
-                content, content,
+                title: postTitle.textContent,
+                content, postContent.textContent,
                 timestamp: new Date()
             })
             console.log("Successfully saved new entry. ID: ", docRef.id)
