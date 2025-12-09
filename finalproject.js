@@ -143,17 +143,20 @@ async function getPosts(db) {
 const newPost = document.getElementById('new-post-form');
 const postTitle = document.getElementById('post-title');
 const postContent = document.getElementById('post-content');
+const postLocation = document.getElementById('post-location');
 
 if(newPost) {
     newPost.addEventListener('submit', async (event) => {
         event.preventDefault();
         const newtitle = postTitle.value;
         const newcontent = postContent.value;
+        const meetlocation = postLocation.value;
         try {
             const postsCol = collection(db, 'posts');
             const docRef = await addDoc(postsCol, {
                 title: newtitle,
                 content: newcontent,
+                location: meetlocation,
                 timestamp: new Date()
             })
             console.log("Successfully saved new entry. ID: ", docRef.id)
@@ -166,6 +169,23 @@ if(newPost) {
 }
 console.log("declared getPosts successfully");
 getPosts(db);
+
+async function searchPosts(searchterm) {
+    const postCol = query(collection(db, 'posts'), where('location', '==', searchterm));
+    const colSnapshot = await getDocs(postCol);
+    const postList = colSnapshot.docs.map(doc => doc.data());
+    const postContent = document.querySelector('content');
+    console.log("Got posts: ", postList);
+    postContent.innerHTML='';
+    postList.forEach(post => {
+        console.log(post)
+        const postElement = document.createElement('div');
+        postElement.classList.add('post-item');
+        postElement.innerHTML = `<h3>${post.title || "Untitled"}</h3>\n<p>${post.content || "No content"}</p>`;
+        postContent.appendChild(postElement);
+    })
+    return postList;
+}
 
 // Save user"s theme choice
 function setTheme(theme) {
