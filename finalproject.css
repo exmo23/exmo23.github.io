@@ -27,6 +27,11 @@ input {
     font-family: Quicksand;
     text-indent: 16px;
 }
+label {
+    font-size: 20px;
+    font-family: Quicksand;
+    text-indent: 16px;
+}
 .main-grid {
     display: grid;
     flex-direction: column;
