@@ -31,14 +31,14 @@ const eighteenlistings = document.querySelector(".age18");
 const twentyonelistings = document.querySelector(".age21");
 
 
-function searchPosts() {
+async function searchPosts() {
     event.preventDefault();
     console.log("Called search function");
     const searchTerm = document.getElementById('search-text').value;
     console.log(searchTerm);
     console.log("started search");
     const postCol = query(collection(db, 'posts'), where("location", "==", searchTerm));
-    const colSnapshot = getDocs(postCol);
+    const colSnapshot = await getDocs(postCol);
     const postList = colSnapshot.docs.map(doc => doc.data());
     const postContent = document.querySelector('content');
     console.log("Successfully searched posts: ", postList);
