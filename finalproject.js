@@ -184,6 +184,7 @@ if(newPost) {
                 location: meetlocation,
                 timestamp: new Date()
             })
+            getPosts(db);
             console.log("Successfully saved new entry. ID: ", docRef.id)
         }
         catch(Exception) {
