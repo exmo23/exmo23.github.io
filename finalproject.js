@@ -1,6 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-analytics.js";
-import { getFirestore, collection, getDocs, addDoc } from 'https://www.gstatic.com/firebasejs/12.6.0/firebase-firestore.js';
+import { getFirestore, collection, getDocs, addDoc, query, where } from 'https://www.gstatic.com/firebasejs/12.6.0/firebase-firestore.js';
   // TODO: Add SDKs for Firebase products that you want to use
   // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -29,6 +29,31 @@ const thirteenlistings = document.querySelector(".age13");
 const sixteenlistings = document.querySelector(".age16");
 const eighteenlistings = document.querySelector(".age18");
 const twentyonelistings = document.querySelector(".age21");
+
+
+function searchPosts() {
+    event.preventDefault();
+    console.log("Called search function");
+    const searchTerm = document.getElementById('search-text').value;
+    console.log(searchTerm);
+    console.log("started search");
+    const postCol = query(collection(db, 'posts'), where("location", "==", searchTerm));
+    const colSnapshot = getDocs(postCol);
+    const postList = colSnapshot.docs.map(doc => doc.data());
+    const postContent = document.querySelector('content');
+    console.log("Successfully searched posts: ", postList);
+    postContent.innerHTML='';
+    postList.forEach(post => {
+        console.log(post)
+        const postElement = document.createElement('div');
+        postElement.classList.add('post-item');
+        postElement.innerHTML = `<h3>${post.title || "Untitled"}</h3>\n<p>${post.content || "No content"}</p>`;
+        postContent.appendChild(postElement);
+    })
+    return postList;
+};
+
+window.searchPosts = searchPosts;
 
   // Initialize Firebase
 const app = initializeApp(firebaseConfig);
@@ -169,23 +194,6 @@ if(newPost) {
 }
 console.log("declared getPosts successfully");
 getPosts(db);
-
-async function searchPosts(searchterm) {
-    const postCol = query(collection(db, 'posts'), where('location', '==', searchterm));
-    const colSnapshot = await getDocs(postCol);
-    const postList = colSnapshot.docs.map(doc => doc.data());
-    const postContent = document.querySelector('content');
-    console.log("Got posts: ", postList);
-    postContent.innerHTML='';
-    postList.forEach(post => {
-        console.log(post)
-        const postElement = document.createElement('div');
-        postElement.classList.add('post-item');
-        postElement.innerHTML = `<h3>${post.title || "Untitled"}</h3>\n<p>${post.content || "No content"}</p>`;
-        postContent.appendChild(postElement);
-    })
-    return postList;
-}
 
 // Save user"s theme choice
 function setTheme(theme) {

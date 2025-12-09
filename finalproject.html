@@ -6,7 +6,6 @@
     <meta name="description" content="Find local parkour groups!">
     <title>Parkour Community</title>
     <link rel="stylesheet" href="week6stylesheet.css">
-    <script src="finalproject.js" type="module" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -54,10 +53,11 @@
 <form id="search-form">
   <label for="search-text">Search Posts</label>
   <input type="text" id="search-text"><br>
-  <button type="submit" onclick="searchPosts('search-text.value')">Search</button>
+  <button type="submit" onclick="searchPosts(search-form.value)">Search</button>
 </form>
 <content class="content">
 </content>
+<script src="finalproject.js" type="module"></script>
 </body>
 <footer>
   <p><small>Information we store on your device: </small></p><br>
