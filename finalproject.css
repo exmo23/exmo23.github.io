@@ -22,10 +22,13 @@ body.dark {
 body.light {
     background-color: #F4F4F6;
 }
-input {
+.inputform {
+    display: block;
+    flex-direction: column;
+    background-color:#F4F4F6;
     font-size: 20px;
     font-family: Quicksand;
-    text-indent: 16px;
+    text-indent: 0px;
 }
 label {
     font-size: 20px;
@@ -38,6 +41,13 @@ label {
     grid-template:
     "nav"
     "sidebar content";
+}
+.content {
+    animation: fadeIn, 0.2s;
+}
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
 }
 .main-nav {
     display: flex;
